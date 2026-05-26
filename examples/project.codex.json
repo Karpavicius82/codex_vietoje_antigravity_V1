@@ -1,0 +1,47 @@
+{
+  "projectName": "Example Project",
+  "stack": ["node", "typescript", "react", "nextjs"],
+  "entryPoint": "src/index.ts",
+  "architecture": "monolith",
+  "commands": {
+    "install": "npm install",
+    "dev": "npm run dev",
+    "test": "npm test",
+    "lint": "npm run lint",
+    "typecheck": "npm run typecheck",
+    "build": "npm run build"
+  },
+  "paths": {
+    "source": ["src"],
+    "tests": ["tests", "__tests__"],
+    "docs": ["README.md", "docs"],
+    "config": [".env.example", "next.config.js"]
+  },
+  "criticalPaths": [
+    "src/auth/",
+    "src/api/payment/"
+  ],
+  "ignorePatterns": [
+    "node_modules",
+    "dist",
+    ".next",
+    "coverage",
+    "*.min.js"
+  ],
+  "database": {
+    "type": "none",
+    "migrationCommand": ""
+  },
+  "cicd": {
+    "provider": "github-actions",
+    "configPath": ".github/workflows/"
+  },
+  "rules": [
+    "Read package.json before choosing commands.",
+    "Prefer existing components and utilities.",
+    "Do not touch generated files unless the task requires it.",
+    "Follow existing naming conventions in the codebase.",
+    "Check for TypeScript errors before committing."
+  ],
+  "customWorkflows": {}
+}

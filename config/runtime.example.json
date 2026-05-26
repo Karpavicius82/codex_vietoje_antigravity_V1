@@ -1,0 +1,27 @@
+﻿{
+  "runtime": {
+    "name": "Codex vietoje Antigravity",
+    "version": "0.1.0",
+    "shell": "powershell",
+    "approvalMode": "on-request",
+    "maxParallelAgents": 5
+  },
+  "paths": {
+    "workspaceRoot": "./workspace",
+    "memoryRoot": "./memory",
+    "logsRoot": "./logs",
+    "workOrdersRoot": "./work-orders",
+    "knowledgeBase": "./memory/knowledge-base"
+  },
+  "execution": {
+    "sandboxMode": "workspace-write",
+    "network": "restricted",
+    "preserveUserChanges": true,
+    "requireApprovalForDestructiveActions": true
+  },
+  "scanner": {
+    "ignoreDirs": [".git", "node_modules", "vcpkg", "build", "dist", "out", "Release", "Debug"],
+    "ignoreExtensions": [".bak", ".db", ".wal", ".shm", ".obj", ".exe", ".dll", ".log"],
+    "doNotImportPatterns": ["api_token", "oauth", "secret", "credential", "password"]
+  }
+}

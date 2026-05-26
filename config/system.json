@@ -1,0 +1,45 @@
+{
+  "name": "Codex vietoje Antigravity",
+  "version": "0.2.0",
+  "language": "lt",
+  "defaultWorkflow": "feature",
+  "paths": {
+    "agents": "agents",
+    "workflows": "workflows",
+    "skills": "skills",
+    "templates": "templates",
+    "policies": "policies",
+    "memory": "memory"
+  },
+  "definitionOfDone": [
+    "Relevant code was inspected before editing.",
+    "Changes are scoped to the requested task.",
+    "Tests, lint, typecheck, or equivalent verification were run when available.",
+    "If verification could not run, the blocker is stated clearly.",
+    "Changed files and behavioral impact are summarized.",
+    "No destructive git, filesystem, deploy, or secret operation was performed without explicit approval."
+  ],
+  "codexRuntime": {
+    "mode": "local",
+    "preferredModel": "default",
+    "allowSubagents": true,
+    "requirePlanForLargeTasks": true,
+    "maxIterations": 10,
+    "defaultTimeoutSeconds": 600
+  },
+  "promptComposition": {
+    "includeAgentProfile": true,
+    "includeWorkflow": true,
+    "includeProjectConfig": true,
+    "includeSafetyPolicy": true,
+    "includeVerificationPolicy": true,
+    "includeDefinitionOfDone": true,
+    "includeSkills": "auto",
+    "includeRecentSessions": 3
+  },
+  "hooks": {
+    "preTask": null,
+    "postTask": "scripts/Save-Session.ps1",
+    "onError": null
+  }
+}

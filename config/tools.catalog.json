@@ -1,0 +1,61 @@
+﻿{
+  "version": 1,
+  "purpose": "Human-readable v0.1 tool catalog. This is documentation, not an execution engine.",
+  "categories": [
+    {
+      "id": "filesystem",
+      "description": "Read, list, and write project files under explicit workspace rules.",
+      "requiresApproval": "when-outside-workspace-or-destructive"
+    },
+    {
+      "id": "shell",
+      "description": "Run PowerShell commands for validation, tests, and local automation.",
+      "requiresApproval": "when-escalated-or-destructive"
+    },
+    {
+      "id": "git",
+      "description": "Inspect repository state and prepare changes. Push/reset/clean require explicit approval.",
+      "requiresApproval": "for-push-reset-clean"
+    },
+    {
+      "id": "browser",
+      "description": "Verify local web apps and visual/frontend behavior when available.",
+      "requiresApproval": "when-starting-external-gui-or-network"
+    },
+    {
+      "id": "web",
+      "description": "Look up current external information when necessary.",
+      "requiresApproval": "when-network-restricted"
+    },
+    {
+      "id": "documents",
+      "description": "Create or inspect document artifacts when explicitly requested.",
+      "requiresApproval": "when-writing-outside-workspace"
+    },
+    {
+      "id": "spreadsheets",
+      "description": "Create, analyze, or edit spreadsheet artifacts when requested.",
+      "requiresApproval": "when-writing-outside-workspace"
+    },
+    {
+      "id": "presentations",
+      "description": "Create or edit slide decks when requested.",
+      "requiresApproval": "when-writing-outside-workspace"
+    },
+    {
+      "id": "gmail",
+      "description": "Read or send email only when the user explicitly asks.",
+      "requiresApproval": "user-explicit-request"
+    },
+    {
+      "id": "google_drive",
+      "description": "Read or modify Drive/Docs/Sheets/Slides only when the user explicitly asks.",
+      "requiresApproval": "user-explicit-request"
+    },
+    {
+      "id": "flights",
+      "description": "Search flights only when the user explicitly asks.",
+      "requiresApproval": "user-explicit-request"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "approvalRequired": [
+    "delete_files",
+    "recursive_delete",
+    "git_reset",
+    "git_clean",
+    "git_push",
+    "git_force_push",
+    "deploy",
+    "deploy_production",
+    "database_migration_apply",
+    "database_drop",
+    "production_write",
+    "secret_rotation",
+    "external_network_install",
+    "dns_change",
+    "ssl_certificate_change"
+  ],
+  "neverDoAutomatically": [
+    "commit_unrelated_changes",
+    "revert_user_changes",
+    "print_secrets",
+    "write_to_production_without_confirmation",
+    "delete_user_data",
+    "modify_auth_without_review",
+    "change_encryption_keys"
+  ],
+  "safeDefaults": {
+    "preferReadBeforeWrite": true,
+    "preferSmallScopedPatches": true,
+    "preserveDirtyWorktree": true,
+    "askWhenAmbiguousAndRisky": true,
+    "maxFileReadSizeMB": 10,
+    "maxFilesPerOperation": 50,
+    "maxIterationsBeforeStop": 10
+  },
+  "riskZones": {
+    "critical": [
+      "auth/",
+      "payment/",
+      "billing/",
+      "security/",
+      "migration/",
+      "*.secret.*",
+      "*.key",
+      ".env"
+    ],
+    "caution": [
+      "config/",
+      "deploy/",
+      "ci/",
+      ".github/",
+      "docker/",
+      "Dockerfile",
+      "database/"
+    ]
+  }
+}

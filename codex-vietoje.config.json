@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "workspace": "./workspace",
+  "logs": "./logs",
+  "codex": {
+    "command": "codex",
+    "defaultModel": "default",
+    "approvalMode": "on-request"
+  },
+  "defaults": {
+    "shell": "powershell",
+    "timeoutSeconds": 600,
+    "dryRun": false
+  },
+  "tasks": {
+    "doctor": {
+      "description": "Run local environment checks",
+      "steps": [
+        {
+          "type": "script",
+          "path": "./scripts/Test-Environment.ps1"
+        }
+      ]
+    },
+    "validate": {
+      "description": "Validate orchestrator config",
+      "steps": [
+        {
+          "type": "script",
+          "path": "./scripts/Test-Config.ps1"
+        }
+      ]
+    },
+    "starter": {
+      "description": "Print a starter Codex agent prompt",
+      "steps": [
+        {
+          "type": "script",
+          "path": "./scripts/New-StarterPrompt.ps1"
+        }
+      ]
+    }
+  }
+}
